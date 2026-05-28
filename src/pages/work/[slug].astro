@@ -1,0 +1,166 @@
+---
+// src/pages/work/[slug].astro
+import { getCollection, render } from "astro:content";
+import Base from "../../layouts/Base.astro";
+import Footer from "../../components/Footer.astro";
+
+export async function getStaticPaths() {
+  const projects = await getCollection("projects");
+  return projects.map((p) => ({ params: { slug: p.id } }));
+}
+
+const { slug } = Astro.params;
+const projects = await getCollection("projects");
+const sorted = projects.sort((a, b) => a.data.weight - b.data.weight);
+const project = projects.find((p) => p.id === slug);
+
+if (!project) {
+  return Astro.redirect("/404");
+}
+
+const currentIndex = sorted.findIndex((p) => p.id === slug);
+const prevProject = currentIndex > 0 ? sorted[currentIndex - 1] : null;
+const nextProject = currentIndex < sorted.length - 1 ? sorted[currentIndex + 1] : null;
+const { Content } = await render(project);
+---
+
+<Base title={`${project.data.title} — Hazenix`} description={project.data.summary}>
+  <!-- Top bar -->
+  <div class="flex items-center justify-between border-b border-border-light px-6 py-5 lg:px-16">
+    <a href="/" class="text-[13px] text-text-faint no-underline transition-colors hover:text-text">&larr; Back</a>
+    <a href="/" class="text-[13px] font-medium text-text no-underline">Hazenix</a>
+    {nextProject ? (
+      <a href={`/work/${nextProject.id}`} class="text-[13px] text-[#bbb] no-underline transition-colors hover:text-text">Next Project &rarr;</a>
+    ) : (
+      <span class="text-[13px] text-border">Next Project &rarr;</span>
+    )}
+  </div>
+
+  <main>
+    <!-- Cover image -->
+    {project.data.cover && (
+      <div class="mx-6 mt-12 lg:mx-16 lg:mt-12">
+        <img
+          src={project.data.cover}
+          alt={project.data.title}
+          class="h-[200px] w-full rounded object-cover lg:h-[280px]"
+        />
+      </div>
+    )}
+
+    <!-- Title block -->
+    <div class="px-6 pt-10 lg:px-16 lg:pt-10">
+      <p class="section-label !mb-3 lg:!mb-3">
+        Project {(currentIndex + 1).toString().padStart(2, "0")}
+      </p>
+      <h1 class="text-[32px] font-[280] tracking-[-0.8px] text-text lg:text-[40px]">
+        {project.data.title}
+      </h1>
+      <p class="mt-5 max-w-[600px] text-[15px] leading-[1.8] text-text-muted">
+        {project.data.summary}
+      </p>
+      <div class="mt-6 flex gap-2.5">
+        <a
+          href={project.data.links.github}
+          class="inline-block rounded border border-border-dark px-[14px] py-[5px] text-[11px] text-text no-underline transition-colors hover:bg-text hover:text-bg"
+        >
+          GitHub &rarr;
+        </a>
+        {project.data.links.demo && (
+          <a
+            href={project.data.links.demo}
+            class="inline-block rounded border border-border-dark px-[14px] py-[5px] text-[11px] text-text no-underline transition-colors hover:bg-text hover:text-bg"
+          >
+            Live Demo &rarr;
+          </a>
+        )}
+      </div>
+    </div>
+
+    <!-- Body: content + sidebar -->
+    <div class="grid grid-cols-1 gap-8 px-6 py-12 lg:grid-cols-[2fr_1fr] lg:gap-12 lg:px-16 lg:py-12">
+      <!-- Markdown content -->
+      <article class="prose-custom">
+        <Content />
+      </article>
+
+      <!-- Sidebar meta -->
+      <aside>
+        <div class="rounded border border-border-light p-6">
+          <p class="mb-5 text-[11px] font-medium tracking-[2px] text-text-faint uppercase">Tech Stack</p>
+          <div class="flex flex-wrap gap-x-2 gap-y-1 text-[10px] text-[#777]">
+            {project.data.tech.map((t: string, i: number) => (
+              <>{i > 0 && <span class="text-border">·</span>}<span>{t}</span></>
+            ))}
+          </div>
+
+          <p class="mb-3 mt-7 text-[11px] font-medium tracking-[2px] text-text-faint uppercase">Role</p>
+          <p class="text-xs text-[#777]">{project.data.role}</p>
+
+          <p class="mb-3 mt-5 text-[11px] font-medium tracking-[2px] text-text-faint uppercase">Links</p>
+          <a href={project.data.links.github} class="block text-xs text-[#777] no-underline transition-colors hover:text-text break-all">
+            {project.data.links.github.replace("https://", "")}
+          </a>
+        </div>
+      </aside>
+    </div>
+
+    <!-- Prev/Next nav -->
+    <div class="flex items-center justify-between border-t border-border-light px-6 py-8 lg:px-16">
+      {prevProject ? (
+        <a href={`/work/${prevProject.id}`} class="text-xs text-[#bbb] no-underline transition-colors hover:text-text">&larr; {prevProject.data.title}</a>
+      ) : (
+        <span class="text-xs text-border">&larr; Previous</span>
+      )}
+      {nextProject ? (
+        <a href={`/work/${nextProject.id}`} class="text-xs text-[#bbb] no-underline transition-colors hover:text-text">{nextProject.data.title} &rarr;</a>
+      ) : (
+        <span class="text-xs text-border">Next &rarr;</span>
+      )}
+    </div>
+  </main>
+
+  <Footer />
+</Base>
+
+<style>
+  .prose-custom {
+    font-size: 0.8125rem;
+    line-height: 1.9;
+    color: #777;
+  }
+  .prose-custom :global(h2) {
+    font-size: 0.8125rem;
+    font-weight: 550;
+    color: #1a1a1a;
+    margin-top: 2rem;
+    margin-bottom: 1rem;
+  }
+  .prose-custom :global(h3) {
+    font-size: 0.8125rem;
+    font-weight: 550;
+    color: #1a1a1a;
+    margin-top: 1.5rem;
+    margin-bottom: 0.75rem;
+  }
+  .prose-custom :global(p) {
+    margin-bottom: 1rem;
+  }
+  .prose-custom :global(ul), .prose-custom :global(ol) {
+    padding-left: 1rem;
+    margin-bottom: 1rem;
+  }
+  .prose-custom :global(li) {
+    margin-bottom: 0.25rem;
+  }
+  .prose-custom :global(code) {
+    font-size: 0.75rem;
+    background: #f0f0f0;
+    padding: 1px 4px;
+    border-radius: 2px;
+  }
+  .prose-custom :global(strong) {
+    color: #1a1a1a;
+    font-weight: 550;
+  }
+</style>
