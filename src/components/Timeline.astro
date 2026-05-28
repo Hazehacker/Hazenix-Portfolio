@@ -1,0 +1,57 @@
+---
+// src/components/Timeline.astro
+import timelineData from "../data/timeline.json";
+---
+
+<section class="px-6 py-16 lg:px-20 lg:py-20">
+  <div class="mx-auto max-w-5xl">
+    <p class="section-label !mb-14 lg:!mb-14">Experience</p>
+
+    <!-- Desktop: vertical line timeline -->
+    <div class="relative hidden lg:block">
+      <!-- Vertical line -->
+      <div class="absolute bottom-0 left-[256px] top-0 w-px bg-border-dark"></div>
+
+      {timelineData.map((entry) => (
+        <div class="relative mb-12 pl-[280px] last:mb-0">
+          <!-- Dot -->
+          <div
+            class={`absolute top-1 h-3 w-3 rounded-full ${
+              entry.current
+                ? "left-[250px] border-0 bg-text"
+                : "left-[250px] border-2 border-border-dark bg-bg"
+            }`}
+          ></div>
+
+          <!-- Year -->
+          <p class="absolute left-0 top-0 w-[240px] text-right text-[13px] font-[450] text-[#bbb]">
+            {entry.period}
+          </p>
+
+          <!-- Content -->
+          <div>
+            <h3 class="mb-1.5 text-[22px] font-[320] tracking-[-0.3px] text-text">
+              {entry.title}
+            </h3>
+            <p class="mb-2.5 text-[13px] text-text-faint">{entry.company}</p>
+            <p class="max-w-[500px] text-[13px] leading-[1.7] text-text-muted">
+              {entry.description}
+            </p>
+          </div>
+        </div>
+      ))}
+    </div>
+
+    <!-- Mobile: simple list -->
+    <div class="lg:hidden">
+      {timelineData.map((entry) => (
+        <div class="mb-10 last:mb-0">
+          <p class="mb-1 text-[13px] font-medium text-text-faint">{entry.period}</p>
+          <h3 class="mb-1 text-lg font-medium text-text">{entry.title}</h3>
+          <p class="mb-2 text-[13px] text-text-faint">{entry.company}</p>
+          <p class="text-[13px] leading-[1.7] text-text-muted">{entry.description}</p>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>
