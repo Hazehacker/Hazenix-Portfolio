@@ -1,0 +1,27 @@
+---
+// src/components/About.astro
+import aboutData from "../data/about.json";
+---
+
+<section id="about" class="px-6 py-16 lg:px-20 lg:py-20">
+  <div class="mx-auto max-w-5xl">
+    <div class="grid grid-cols-1 gap-10 md:grid-cols-2 md:gap-10">
+      <!-- About text -->
+      <div>
+        <p class="section-label !mb-4 lg:!mb-4">About</p>
+        <p class="text-sm leading-[1.8] text-[#777] lg:text-sm">
+          {aboutData.description}
+        </p>
+      </div>
+      <!-- Connect -->
+      <div id="contact">
+        <p class="section-label !mb-4 lg:!mb-4">Connect</p>
+        <div class="text-sm leading-[2.2] text-[#777]">
+          <a href={aboutData.contact.github} class="text-[#777] no-underline transition-colors hover:text-text">GitHub</a><br />
+          <a href={`mailto:${aboutData.contact.email}`} class="text-[#777] no-underline transition-colors hover:text-text">Email</a><br />
+          <a href={aboutData.contact.blog} class="text-[#777] no-underline transition-colors hover:text-text">Blog</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
