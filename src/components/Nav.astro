@@ -1,0 +1,27 @@
+---
+// src/components/Nav.astro
+const navLinks = [
+  { href: "#work", label: "Work" },
+  { href: "#about", label: "About" },
+  { href: "#contact", label: "Contact" },
+];
+---
+
+<nav class="fixed top-0 left-0 right-0 z-50 bg-bg/90 backdrop-blur-sm">
+  <div class="mx-auto flex max-w-5xl items-center justify-between px-6 py-5 lg:px-20">
+    <a href="/" class="text-[15px] font-medium tracking-[-0.2px] text-text no-underline">
+      Hazenix
+    </a>
+    <div class="flex gap-9">
+      {navLinks.map((link) => (
+        <a
+          href={link.href}
+          class="text-[13px] text-text-muted no-underline transition-colors hover:text-text"
+        >
+          {link.label}
+        </a>
+      ))}
+    </div>
+  </div>
+  <div class="section-divider" />
+</nav>
