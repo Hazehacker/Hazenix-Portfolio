@@ -1,0 +1,27 @@
+---
+// src/components/Skills.astro
+import skillsData from "../data/skills.json";
+---
+
+<section class="px-6 py-16 lg:px-20 lg:py-20">
+  <div class="mx-auto max-w-5xl">
+    <p class="section-label !mb-14 lg:!mb-14">What I Work With</p>
+
+    <div class="grid grid-cols-1 gap-14 md:grid-cols-3 md:gap-14">
+      {Object.entries(skillsData).map(([category, items]) => (
+        <div>
+          <h3 class="mb-6 text-[28px] font-[220] tracking-[-0.5px] text-text lg:text-[32px]">
+            {category}
+          </h3>
+          <div class="flex flex-wrap gap-2">
+            {(items as string[]).map((skill: string) => (
+              <span class="rounded-[2px] border border-border bg-white px-[14px] py-[5px] text-xs text-[#555]">
+                {skill}
+              </span>
+            ))}
+          </div>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>
