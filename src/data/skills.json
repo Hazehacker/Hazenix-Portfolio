@@ -1,0 +1,16 @@
+{
+  "Backend": [
+    "Java", "Spring Boot", "MyBatis Plus",
+    "PostgreSQL", "Redis", "MySQL",
+    "Maven", "Docker"
+  ],
+  "AI & Data": [
+    "RAG", "LLM Integration", "Vector Search",
+    "Prompt Engineering", "Agent Design",
+    "Spring AI", "pgvector"
+  ],
+  "Frontend": [
+    "Vue 3", "TypeScript", "Tailwind CSS",
+    "Element Plus", "Naive UI", "Pinia", "Git"
+  ]
+}
