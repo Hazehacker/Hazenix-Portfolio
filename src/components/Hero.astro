@@ -1,0 +1,18 @@
+---
+// src/components/Hero.astro
+import aboutData from "../data/about.json";
+---
+
+<section class="px-6 pb-16 pt-40 lg:px-20 lg:pb-20 lg:pt-[120px]">
+  <div class="mx-auto max-w-5xl">
+    <p class="section-label !mb-7 lg:!mb-7">
+      {aboutData.title}
+    </p>
+    <h1 class="max-w-[680px] text-[36px] leading-[1.15] tracking-[-0.8px] text-text lg:text-[52px] lg:font-[280] lg:tracking-[-1.2px]">
+      I design and build systems that are <em class="not-italic lg:font-[340]">reliable</em>, <em class="not-italic lg:font-[340]">scalable</em>, and <em class="not-italic lg:font-[340]">beautifully simple</em>.
+    </h1>
+    <p class="mt-8 max-w-[480px] text-[15px] leading-[1.7] text-text-muted lg:text-base">
+      {aboutData.description}
+    </p>
+  </div>
+</section>
