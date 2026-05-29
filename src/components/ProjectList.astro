@@ -42,7 +42,7 @@ const projects = (await getCollection("projects"))
           <!-- Right: screenshot placeholder -->
           <div class="flex h-[120px] items-center justify-center rounded-[6px] bg-[#f0f0f0] text-xs text-[#bbb] lg:h-[140px]">
             {project.data.cover ? (
-              <img src={project.data.cover} alt={project.data.title} class="h-full w-full rounded-[6px] object-cover" />
+              <img src={project.data.cover} alt={project.data.title} loading="lazy" class="h-full w-full rounded-[6px] object-cover" />
             ) : (
               <span>Screenshot Preview</span>
             )}

@@ -36,13 +36,14 @@ const { Content } = await render(project);
     )}
   </div>
 
-  <main>
+  <main id="main-content">
     <!-- Cover image -->
     {project.data.cover && (
       <div class="mx-6 mt-12 lg:mx-16 lg:mt-12">
         <img
           src={project.data.cover}
           alt={project.data.title}
+          loading="lazy"
           class="h-[200px] w-full rounded object-cover lg:h-[280px]"
         />
       </div>

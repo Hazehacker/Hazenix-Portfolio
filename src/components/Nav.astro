@@ -1,9 +1,12 @@
 ---
 // src/components/Nav.astro
+const currentPath = Astro.url?.pathname || "/";
+const isHome = currentPath === "/";
+
 const navLinks = [
-  { href: "#work", label: "Work" },
-  { href: "#about", label: "About" },
-  { href: "#contact", label: "Contact" },
+  { href: isHome ? "#work" : "/#work", label: "Work" },
+  { href: isHome ? "#about" : "/#about", label: "About" },
+  { href: isHome ? "#contact" : "/#contact", label: "Contact" },
 ];
 ---
 
@@ -12,7 +15,8 @@ const navLinks = [
     <a href="/" class="text-[15px] font-medium tracking-[-0.2px] text-text no-underline">
       Hazenix
     </a>
-    <div class="flex gap-9">
+    <!-- Desktop links -->
+    <div class="hidden gap-9 sm:flex">
       {navLinks.map((link) => (
         <a
           href={link.href}
@@ -22,6 +26,37 @@ const navLinks = [
         </a>
       ))}
     </div>
+    <!-- Mobile hamburger -->
+    <button
+      type="button"
+      id="mobile-menu-btn"
+      class="flex flex-col gap-1 sm:hidden"
+      aria-label="Toggle menu"
+    >
+      <span class="block h-[1.5px] w-5 bg-text transition-transform" />
+      <span class="block h-[1.5px] w-5 bg-text transition-transform" />
+      <span class="block h-[1.5px] w-5 bg-text transition-transform" />
+    </button>
+  </div>
+  <!-- Mobile menu -->
+  <div id="mobile-menu" class="hidden flex-col gap-4 px-6 pb-5 sm:hidden">
+    {navLinks.map((link) => (
+      <a
+        href={link.href}
+        class="text-[13px] text-text-muted no-underline transition-colors hover:text-text"
+      >
+        {link.label}
+      </a>
+    ))}
   </div>
   <div class="section-divider" />
 </nav>
+<script>
+  const btn = document.getElementById("mobile-menu-btn");
+  const menu = document.getElementById("mobile-menu");
+  if (btn && menu) {
+    btn.addEventListener("click", () => {
+      menu.classList.toggle("hidden");
+    });
+  }
+</script>
