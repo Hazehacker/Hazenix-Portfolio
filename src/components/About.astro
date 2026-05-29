@@ -1,26 +1,32 @@
 ---
 // src/components/About.astro
 import aboutData from "../data/about.json";
+import ContactCard from "./ContactCard.astro";
+
+// Hard-coded emphasis-aware copy. If aboutData.description is overridden, this won't apply emphasis.
+const aboutLine = "我是一名后端工程师，相信<em>系统的优雅</em>来自对边界的清晰认知。喜欢把<em>抽象的算法</em>变成稳定运行的产品，也喜欢写文章把过程记录下来。";
+const aboutMeta = "业余写技术博客 · 喜欢摄影 · 跑步 · 偶尔做开源 · 关注 AI Agent / 数据库底层 / 系统设计";
 ---
 
-<section id="about" class="px-6 py-16 lg:px-20 lg:py-20">
-  <div class="mx-auto max-w-5xl">
-    <div class="grid grid-cols-1 gap-10 md:grid-cols-2 md:gap-10">
+<section id="about" class="px-6 py-[110px] lg:px-11 lg:py-[140px]">
+  <div class="mx-auto max-w-[1280px]">
+    <div class="grid grid-cols-1 gap-12 md:grid-cols-[1.4fr_1fr] md:gap-[80px]">
       <!-- About text -->
       <div>
-        <p class="section-label !mb-4 lg:!mb-4">About</p>
-        <p class="text-sm leading-[1.8] text-[#777] lg:text-sm">
-          {aboutData.description}
+        <p class="eyebrow">About</p>
+        <p
+          class="font-serif text-text"
+          style="font-size:clamp(22px, 3.4vw, 36px); line-height:1.4; letter-spacing:-0.5px; font-weight:400;"
+          set:html={aboutLine.replace(/<em>/g, '<em style="font-style:italic;color:#3B82F6;font-weight:500;">')}
+        />
+        <p class="font-sans text-text-2" style="font-size:16px; line-height:2; margin-top:32px; font-weight:450;">
+          {aboutMeta}
         </p>
       </div>
-      <!-- Connect -->
-      <div id="contact">
-        <p class="section-label !mb-4 lg:!mb-4">Connect</p>
-        <div class="text-sm leading-[2.2] text-[#777]">
-          <a href={aboutData.contact.github} class="text-[#777] no-underline transition-colors hover:text-text">GitHub</a><br />
-          <a href={`mailto:${aboutData.contact.email}`} class="text-[#777] no-underline transition-colors hover:text-text">Email</a><br />
-          <a href={aboutData.contact.blog} class="text-[#777] no-underline transition-colors hover:text-text">Blog</a>
-        </div>
+
+      <!-- Contact card -->
+      <div>
+        <ContactCard />
       </div>
     </div>
   </div>
