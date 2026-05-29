@@ -42,6 +42,14 @@ const siteUrl = "https://hazenix.top";
     <a href="#main-content" class="sr-only focus:not-sr-only focus:fixed focus:top-3 focus:left-3 focus:z-[100] focus:rounded focus:bg-text focus:px-4 focus:py-2 focus:text-sm focus:text-bg">
       Skip to content
     </a>
-    <slot />
+
+    <!-- Global floating orbs (atmospheric background) -->
+    <div class="orb orb-1" aria-hidden="true"></div>
+    <div class="orb orb-2" aria-hidden="true"></div>
+    <div class="orb orb-3" aria-hidden="true"></div>
+
+    <div class="page">
+      <slot />
+    </div>
   </body>
 </html>
