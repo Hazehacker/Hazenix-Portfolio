@@ -197,3 +197,92 @@ body {
   font-style: italic;
   font-weight: 600;
 }
+
+/* === Floating orbs (global atmospheric background) === */
+.orb {
+  position: fixed;
+  border-radius: 50%;
+  filter: blur(60px);
+  pointer-events: none;
+  z-index: 0;
+  will-change: transform;
+}
+.orb-1 {
+  width: 600px;
+  height: 600px;
+  background: radial-gradient(circle, rgba(77, 163, 255, 0.42) 0%, transparent 70%);
+  top: -150px;
+  right: -120px;
+  animation: orb-float-1 14s ease-in-out infinite;
+}
+.orb-2 {
+  width: 520px;
+  height: 520px;
+  background: radial-gradient(circle, rgba(120, 90, 255, 0.32) 0%, transparent 70%);
+  top: 35%;
+  left: -180px;
+  animation: orb-float-2 16s ease-in-out infinite;
+}
+.orb-3 {
+  width: 440px;
+  height: 440px;
+  background: radial-gradient(circle, rgba(77, 163, 255, 0.28) 0%, transparent 70%);
+  bottom: -120px;
+  right: 8%;
+  animation: orb-float-3 18s ease-in-out infinite;
+}
+@keyframes orb-float-1 {
+  0%, 100% { transform: translate(0, 0) scale(1); }
+  33%      { transform: translate(-200px, 140px) scale(1.15); }
+  66%      { transform: translate(80px, 260px) scale(0.95); }
+}
+@keyframes orb-float-2 {
+  0%, 100% { transform: translate(0, 0) scale(1); }
+  33%      { transform: translate(220px, -120px) scale(1.1); }
+  66%      { transform: translate(-60px, 180px) scale(0.9); }
+}
+@keyframes orb-float-3 {
+  0%, 100% { transform: translate(0, 0) scale(1); }
+  33%      { transform: translate(-180px, -100px) scale(1.2); }
+  66%      { transform: translate(100px, -220px) scale(0.95); }
+}
+
+/* === Scroll reveal === */
+.reveal {
+  opacity: 0;
+  transform: translateY(24px);
+  transition: opacity 0.7s cubic-bezier(.4, 0, .2, 1),
+              transform 0.7s cubic-bezier(.4, 0, .2, 1);
+}
+.reveal.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* === Reduced motion === */
+@media (prefers-reduced-motion: reduce) {
+  .orb-1, .orb-2, .orb-3 { animation: none; }
+  .reveal { opacity: 1; transform: none; transition: none; }
+  .btn-primary:hover,
+  .pill:hover {
+    transform: none;
+  }
+}
+
+/* === Responsive scaling for large headlines === */
+@media (max-width: 1023px) {
+  .section-title { font-size: clamp(40px, 6.5vw, 72px); margin-bottom: 64px; }
+  .section-title.compact { font-size: clamp(36px, 5.5vw, 60px); margin-bottom: 56px; }
+}
+@media (max-width: 767px) {
+  .eyebrow { font-size: 12px; letter-spacing: 2.5px; gap: 10px; }
+  .eyebrow::before { width: 24px; }
+  .section-title { font-size: clamp(32px, 8vw, 48px); margin-bottom: 48px; }
+  .section-title.compact { font-size: clamp(30px, 7.5vw, 44px); margin-bottom: 40px; }
+  .btn-primary { padding: 13px 24px; font-size: 15px; }
+  .btn-ghost { padding: 13px 0; font-size: 15px; }
+  /* Make orbs smaller on mobile to avoid overflow */
+  .orb-1 { width: 360px; height: 360px; }
+  .orb-2 { width: 320px; height: 320px; }
+  .orb-3 { width: 280px; height: 280px; }
+}
