@@ -8,25 +8,18 @@ import ProjectList from "../components/ProjectList.astro";
 import Timeline from "../components/Timeline.astro";
 import About from "../components/About.astro";
 import Footer from "../components/Footer.astro";
+import RevealOnScroll from "../components/RevealOnScroll.astro";
 ---
 
 <Base title="Hazenix — Backend Developer & Builder">
   <Nav />
   <main id="main-content">
+    <span id="top"></span>
     <Hero />
-    <Skills />
-    <div class="mx-auto max-w-5xl px-6 lg:px-20">
-      <div class="section-divider" />
-    </div>
-    <ProjectList />
-    <div class="mx-auto max-w-5xl px-6 lg:px-20">
-      <div class="section-divider" />
-    </div>
-    <Timeline />
-    <div class="mx-auto max-w-5xl px-6 lg:px-20">
-      <div class="section-divider" />
-    </div>
-    <About />
+    <RevealOnScroll><Skills /></RevealOnScroll>
+    <RevealOnScroll><ProjectList /></RevealOnScroll>
+    <RevealOnScroll><Timeline /></RevealOnScroll>
+    <RevealOnScroll><About /></RevealOnScroll>
   </main>
   <Footer />
 </Base>
