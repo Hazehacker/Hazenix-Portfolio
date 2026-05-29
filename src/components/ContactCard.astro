@@ -1,0 +1,33 @@
+---
+// src/components/ContactCard.astro
+import aboutData from "../data/about.json";
+
+const links = [
+  { label: "GitHub", href: aboutData.contact.github, hint: "↗ " + aboutData.contact.github.replace("https://github.com/", "@") },
+  { label: "Email",  href: `mailto:${aboutData.contact.email}`, hint: "↗ " + aboutData.contact.email },
+  { label: "Blog",   href: aboutData.contact.blog, hint: "↗ " + aboutData.contact.blog.replace("https://", "") },
+];
+---
+
+<div id="contact" class="rounded-2xl border border-border bg-white p-7 lg:p-9">
+  <p
+    class="font-sans font-bold uppercase text-blue"
+    style="font-size:13px; letter-spacing:2.5px; margin-bottom:24px;"
+  >
+    Get in touch
+  </p>
+  <div class="flex flex-col gap-4">
+    {links.map((link) => (
+      <a
+        href={link.href}
+        target={link.href.startsWith("http") ? "_blank" : undefined}
+        rel={link.href.startsWith("http") ? "noopener noreferrer" : undefined}
+        class="contact-link flex items-center justify-between font-sans font-medium text-text no-underline transition-colors hover:text-blue"
+        style="font-size:17px;"
+      >
+        <span>{link.label}</span>
+        <span class="font-sans text-text-3" style="font-size:14px">{link.hint}</span>
+      </a>
+    ))}
+  </div>
+</div>
