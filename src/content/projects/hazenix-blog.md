@@ -13,7 +13,7 @@ tech:
 links:
   github: "https://github.com/Hazehacker/blog.hazenix.top"
   demo: "https://blog.hazenix.top"
-weight: 3
+weight: 1
 current: true
 ---
 

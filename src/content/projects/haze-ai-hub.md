@@ -14,7 +14,7 @@ tech:
 links:
   github: "https://github.com/Hazehacker/haze-AI-Hub"
   demo: ""
-weight: 1
+weight: 3
 current: true
 ---
 

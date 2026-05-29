@@ -15,7 +15,7 @@ tech:
 links:
   github: "https://github.com/Hazehacker/second-GapaSea"
   demo: ""
-weight: 0
+weight: 4
 current: true
 ---
 
