@@ -4,28 +4,33 @@ const currentPath = Astro.url?.pathname || "/";
 const isHome = currentPath === "/";
 
 const navLinks = [
-  { href: isHome ? "#work" : "/#work", label: "Work" },
-  { href: isHome ? "#about" : "/#about", label: "About" },
-  { href: isHome ? "#contact" : "/#contact", label: "Contact" },
+  { href: isHome ? "#work" : "/#work", label: "Work", external: false },
+  { href: isHome ? "#about" : "/#about", label: "About", external: false },
+  { href: isHome ? "#contact" : "/#contact", label: "Contact", external: false },
+  { href: "https://blog.hazenix.top", label: "Blog ↗", external: true },
 ];
 ---
 
-<nav class="fixed top-0 left-0 right-0 z-50 bg-bg/90 backdrop-blur-sm">
-  <div class="mx-auto flex max-w-5xl items-center justify-between px-6 py-5 lg:px-20">
-    <a href="/" class="text-[15px] font-medium tracking-[-0.2px] text-text no-underline">
-      Hazenix
+<nav class="sticky top-0 z-50 border-b border-black/[0.04] backdrop-blur-[14px]" style="background:rgba(250,250,250,0.78)">
+  <div class="mx-auto flex max-w-[1280px] items-center justify-between px-6 py-5 lg:px-11">
+    <a href="/" class="font-serif text-[22px] font-bold tracking-[-0.5px] text-text no-underline lg:text-[28px]">
+      Hazenix<em style="font-style:italic;color:#3B82F6">.</em>
     </a>
+
     <!-- Desktop links -->
-    <div class="hidden gap-9 sm:flex">
+    <div class="hidden gap-7 sm:flex lg:gap-10">
       {navLinks.map((link) => (
         <a
           href={link.href}
-          class="text-[13px] text-text-muted no-underline transition-colors hover:text-text"
+          target={link.external ? "_blank" : undefined}
+          rel={link.external ? "noopener noreferrer" : undefined}
+          class="font-sans text-[15px] font-medium text-text no-underline transition-colors hover:text-blue lg:text-[16px]"
         >
           {link.label}
         </a>
       ))}
     </div>
+
     <!-- Mobile hamburger -->
     <button
       type="button"
@@ -33,24 +38,27 @@ const navLinks = [
       class="flex flex-col gap-1 sm:hidden"
       aria-label="Toggle menu"
     >
-      <span class="block h-[1.5px] w-5 bg-text transition-transform" />
-      <span class="block h-[1.5px] w-5 bg-text transition-transform" />
-      <span class="block h-[1.5px] w-5 bg-text transition-transform" />
+      <span class="block h-[1.5px] w-5 bg-text"></span>
+      <span class="block h-[1.5px] w-5 bg-text"></span>
+      <span class="block h-[1.5px] w-5 bg-text"></span>
     </button>
   </div>
+
   <!-- Mobile menu -->
   <div id="mobile-menu" class="hidden flex-col gap-4 px-6 pb-5 sm:hidden">
     {navLinks.map((link) => (
       <a
         href={link.href}
-        class="text-[13px] text-text-muted no-underline transition-colors hover:text-text"
+        target={link.external ? "_blank" : undefined}
+        rel={link.external ? "noopener noreferrer" : undefined}
+        class="font-sans text-[15px] font-medium text-text no-underline transition-colors hover:text-blue"
       >
         {link.label}
       </a>
     ))}
   </div>
-  <div class="section-divider" />
 </nav>
+
 <script>
   const btn = document.getElementById("mobile-menu-btn");
   const menu = document.getElementById("mobile-menu");
