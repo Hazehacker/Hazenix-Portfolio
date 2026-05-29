@@ -3,16 +3,39 @@
 import aboutData from "../data/about.json";
 ---
 
-<section class="px-6 pb-16 pt-40 lg:px-20 lg:pb-20 lg:pt-[120px]">
-  <div class="mx-auto max-w-5xl">
-    <p class="section-label !mb-7 lg:!mb-7">
-      {aboutData.title}
+<section class="px-6 pb-[120px] pt-[140px] lg:px-11 lg:pb-[150px] lg:pt-[180px]">
+  <div class="mx-auto max-w-[1280px]">
+    <!-- Status pill -->
+    <div class="status-pill mb-7 lg:mb-8">
+      <span class="dot"></span>
+      <span>Available for new opportunities · 2026</span>
+    </div>
+
+    <!-- Eyebrow -->
+    <p class="eyebrow !mb-7 lg:!mb-8" style="font-size:15px;letter-spacing:3.2px">
+      {aboutData.name} · {aboutData.title}
     </p>
-    <h1 class="max-w-[680px] text-[36px] leading-[1.15] tracking-[-0.8px] text-text lg:text-[52px] lg:font-[280] lg:tracking-[-1.2px]">
-      I design and build systems that are <em class="not-italic lg:font-[340]">reliable</em>, <em class="not-italic lg:font-[340]">scalable</em>, and <em class="not-italic lg:font-[340]">beautifully simple</em>.
+
+    <!-- Hero h1 -->
+    <h1
+      class="font-serif font-bold text-text"
+      style="font-size:clamp(44px, 9vw, 104px); line-height:1.02; letter-spacing:-3.5px; max-width:1180px; margin-bottom:36px;"
+    >
+      I build systems that are <span class="grad">reliable, scalable</span>, and beautifully simple.
     </h1>
-    <p class="mt-8 max-w-[480px] text-[15px] leading-[1.7] text-text-muted lg:text-base">
+
+    <!-- Lead -->
+    <p
+      class="font-sans text-text-2"
+      style="font-size:clamp(16px, 1.5vw, 21px); line-height:1.65; max-width:680px; margin-bottom:44px; font-weight:450;"
+    >
       {aboutData.description}
     </p>
+
+    <!-- CTA row -->
+    <div class="flex flex-wrap items-center gap-4">
+      <a class="btn-primary" href="#work">查看作品 →</a>
+      <a class="btn-ghost" href="#contact">联系我</a>
+    </div>
   </div>
 </section>
