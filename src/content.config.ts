@@ -11,7 +11,7 @@ const projectsCollection = defineCollection({
     screenshots: z.array(z.string()).default([]),
     tech: z.array(z.string()).default([]),
     links: z.object({
-      github: z.string(),
+      github: z.union([z.string(), z.array(z.string())]),
       demo: z.string().optional(),
     }),
     weight: z.number().default(99),

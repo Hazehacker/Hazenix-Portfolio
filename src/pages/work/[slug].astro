@@ -22,6 +22,11 @@ const currentIndex = sorted.findIndex((p) => p.id === slug);
 const prevProject = currentIndex > 0 ? sorted[currentIndex - 1] : null;
 const nextProject = currentIndex < sorted.length - 1 ? sorted[currentIndex + 1] : null;
 const { Content } = await render(project);
+
+// Normalize github to always be string[]
+const githubLinks = Array.isArray(project.data.links.github)
+  ? project.data.links.github
+  : [project.data.links.github];
 ---
 
 <Base title={`${project.data.title} — Hazenix`} description={project.data.summary}>
@@ -67,8 +72,10 @@ const { Content } = await render(project);
         >
           {project.data.summary}
         </p>
-        <div class="mt-8 flex gap-3">
-          <a class="btn-primary" href={project.data.links.github} target="_blank" rel="noopener noreferrer">GitHub →</a>
+        <div class="mt-8 flex flex-wrap gap-3">
+          {githubLinks.map((url: string) => (
+            <a class="btn-primary" href={url} target="_blank" rel="noopener noreferrer">GitHub →</a>
+          ))}
           {project.data.links.demo && (
             <a class="btn-ghost" href={project.data.links.demo} target="_blank" rel="noopener noreferrer">Live Demo →</a>
           )}
@@ -98,9 +105,11 @@ const { Content } = await render(project);
             <p class="font-sans text-text-2" style="font-size:14px; font-weight:450;">{project.data.role}</p>
 
             <p class="font-sans font-bold uppercase text-blue mt-8" style="font-size:12px; letter-spacing:2.2px; margin-bottom:10px;">Links</p>
-            <a href={project.data.links.github} target="_blank" rel="noopener noreferrer" class="block break-all font-sans text-text-2 no-underline transition-colors hover:text-blue" style="font-size:14px; font-weight:450;">
-              {project.data.links.github.replace("https://", "")}
-            </a>
+            {githubLinks.map((url: string) => (
+              <a href={url} target="_blank" rel="noopener noreferrer" class="block break-all font-sans text-text-2 no-underline transition-colors hover:text-blue" style="font-size:14px; font-weight:450;">
+                {url.replace("https://", "")}
+              </a>
+            ))}
           </div>
         </aside>
       </div>
