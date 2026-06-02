@@ -12,7 +12,7 @@ tech:
 links:
   github: "https://github.com/Hazehacker/second-GapaSea"
   demo: "https://gapasea.net.cn/"
-weight: 4
+weight: 5
 current: true
 ---
 

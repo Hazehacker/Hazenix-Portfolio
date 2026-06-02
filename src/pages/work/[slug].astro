@@ -162,11 +162,19 @@ const githubLinks = Array.isArray(project.data.links.github)
     margin-bottom: 0.75rem;
   }
   .prose-custom :global(p)  { margin-bottom: 1.25rem; }
-  .prose-custom :global(ul), .prose-custom :global(ol) {
+  .prose-custom :global(ul) {
     padding-left: 1.25rem;
     margin-bottom: 1.25rem;
+    list-style-type: disc;
   }
-  .prose-custom :global(li) { margin-bottom: 0.4rem; }
+  .prose-custom :global(ol) {
+    padding-left: 1.25rem;
+    margin-bottom: 1.25rem;
+    list-style-type: decimal;
+  }
+  .prose-custom :global(li) { margin-bottom: 0.4rem; padding-left: 0.25rem; }
+  .prose-custom :global(ul ul) { list-style-type: circle; }
+  .prose-custom :global(ul ul ul) { list-style-type: square; }
   .prose-custom :global(code) {
     font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
     font-size: 14px;
