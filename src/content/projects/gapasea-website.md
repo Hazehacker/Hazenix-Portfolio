@@ -1,4 +1,5 @@
 ---
+cover: "/gapasea-website.png"
 title: "GapaSea Official Site"
 role: "Frontend Developer (Internship)"
 summary: "智能运动眼镜品牌官网，玻璃拟态卡片、3D Tilt 交互与锥光旋转描边"
@@ -28,7 +29,7 @@ current: true
 
 ## 技术实现
 
-- **构建系统**：自写 30 行 Node.js 构建脚本，支持 HTML partials 拼接、frontmatter 变量注入、静态资源拷贝
+- **构建系统**：自定义 30 行 Node.js 构建脚本，支持 HTML partials 拼接、frontmatter 变量注入、静态资源拷贝
 - **页面结构**：首页（Hero + 产品展示 + 场景 Tab 切换 + 品牌理念 + 行业资讯）、资讯列表、资讯详情（¥1 付费拦截 + 微信/支付宝 QR 弹窗）、联系我们、404
 - **交互细节**：IntersectionObserver 滚动唤起、Tab 平滑切换、产品卡 parallax、prefers-reduced-motion 无障碍适配
 - **部署架构**：产出纯静态 dist/ 目录，Nginx 反向代理，零运行时依赖

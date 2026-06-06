@@ -1,4 +1,5 @@
 ---
+cover: "/interview-skill.png"
 title: "Interview Simulators"
 role: "Skill Designer & Developer"
 summary: "Java 后端 & AI 开发面试模拟器，深度追问链 + 多风格面试官"
