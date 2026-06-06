@@ -1,23 +1,9 @@
 [
   {
-    "period": "2024 — Present",
-    "title": "Backend Developer",
-    "company": "XXX Company",
-    "description": "核心业务系统架构设计与开发，主导 AI 应用平台从零搭建。深度参与分布式系统设计、数据库优化和高并发方案落地。",
+    "period": "2026.04 — Present",
+    "title": "全栈开发",
+    "company": "深圳浪迹光年有限公司",
+    "description": "设计并交付营销中台核心模块：小红书内容分析平台(关键词-帖子-评论-AI意图分类 全链路)、KOL自动入库流水线(设计多路并发)",
     "current": true
-  },
-  {
-    "period": "2022 — 2024",
-    "title": "Junior Developer",
-    "company": "XXX Company",
-    "description": "参与多个后端项目的开发与维护，积累 Java 生态与微服务架构的实践经验。",
-    "current": false
-  },
-  {
-    "period": "2018 — 2022",
-    "title": "B.S. Computer Science",
-    "company": "XXX University",
-    "description": "计算机科学与技术专业，主修数据结构、操作系统、计算机网络与分布式系统。",
-    "current": false
   }
 ]

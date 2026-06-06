@@ -1,12 +1,6 @@
 ---
 // src/components/ContactCard.astro
 import aboutData from "../data/about.json";
-
-const links = [
-  { label: "GitHub", href: aboutData.contact.github, hint: "↗ " + aboutData.contact.github.replace("https://github.com/", "@") },
-  { label: "Email",  href: `mailto:${aboutData.contact.email}`, hint: "↗ " + aboutData.contact.email },
-  { label: "Blog",   href: aboutData.contact.blog, hint: "↗ " + aboutData.contact.blog.replace("https://", "") },
-];
 ---
 
 <div id="contact" class="rounded-2xl border border-border bg-white p-7 lg:p-9">
@@ -17,17 +11,79 @@ const links = [
     Get in touch
   </p>
   <div class="flex flex-col gap-4">
-    {links.map((link) => (
-      <a
-        href={link.href}
-        target={link.href.startsWith("http") ? "_blank" : undefined}
-        rel={link.href.startsWith("http") ? "noopener noreferrer" : undefined}
-        class="contact-link flex items-center justify-between font-sans font-medium text-text no-underline transition-colors hover:text-blue"
-        style="font-size:17px;"
-      >
-        <span>{link.label}</span>
-        <span class="font-sans text-text-3" style="font-size:14px">{link.hint}</span>
-      </a>
-    ))}
+    <!-- GitHub -->
+    <a
+      href={aboutData.contact.github}
+      target="_blank" rel="noopener noreferrer"
+      class="contact-link flex items-center justify-between font-sans font-medium text-text no-underline transition-colors hover:text-blue"
+      style="font-size:17px;"
+    >
+      <span>GitHub</span>
+      <span class="font-sans text-text-3" style="font-size:14px">&rarr; @Hazehacker</span>
+    </a>
+
+    <!-- Email -->
+    <a
+      href={`mailto:${aboutData.contact.email}`}
+      class="contact-link flex items-center justify-between font-sans font-medium text-text no-underline transition-colors hover:text-blue"
+      style="font-size:17px;"
+    >
+      <span>Email</span>
+      <span class="font-sans text-text-3" style="font-size:14px">&rarr; {aboutData.contact.email}</span>
+    </a>
+
+    <!-- WeChat -->
+    <div class="wechat-row flex items-center justify-between font-sans font-medium text-text" style="font-size:17px;">
+      <span>WeChat</span>
+      <span class="wechat-hint font-sans text-text-3" style="font-size:14px;">
+        {aboutData.contact.wechat}
+        <span class="wechat-qr-popup">
+          <img
+            src="/wechat-qr.png"
+            alt="WeChat QR Code"
+            loading="lazy"
+          />
+        </span>
+      </span>
+    </div>
+
+    <!-- Blog -->
+    <a
+      href={aboutData.contact.blog}
+      target="_blank" rel="noopener noreferrer"
+      class="contact-link flex items-center justify-between font-sans font-medium text-text no-underline transition-colors hover:text-blue"
+      style="font-size:17px;"
+    >
+      <span>Blog</span>
+      <span class="font-sans text-text-3" style="font-size:14px">&rarr; blog.hazenix.top</span>
+    </a>
   </div>
 </div>
+
+<style>
+  .wechat-hint {
+    position: relative;
+  }
+  .wechat-qr-popup {
+    display: none;
+    position: absolute;
+    bottom: calc(100% + 12px);
+    right: 0;
+    z-index: 50;
+    background: #fff;
+    border: 1px solid var(--color-border);
+    border-radius: 12px;
+    padding: 12px;
+    box-shadow: 0 12px 40px rgba(0, 0, 0, 0.12);
+  }
+  .wechat-hint:hover .wechat-qr-popup {
+    display: block;
+  }
+  .wechat-qr-popup img {
+    display: block;
+    border-radius: 8px;
+    width: 180px;
+    height: auto;
+    object-fit: contain;
+  }
+</style>

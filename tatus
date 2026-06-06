@@ -1,0 +1,263 @@
+[33mcommit e00150f400b3334640a4fc5b3abe3269f110c2e4[m[33m ([m[1;36mHEAD[m[33m -> [m[1;32mmain[m[33m, [m[1;31morigin/main[m[33m, [m[1;31morigin/HEAD[m[33m)[m
+Author: HazeHacker <3542495583@qq.com>
+Date:   Sat May 30 15:22:15 2026 +0800
+
+    feat(detail): support multiple GitHub links (string or array)
+
+[33mcommit 957fc074d3e80e1db239774abb5806288aa50627[m
+Author: HazeHacker <3542495583@qq.com>
+Date:   Sat May 30 14:12:53 2026 +0800
+
+    fix(hero): center hero content in viewport — min-h calc(100vh-80px) + flex justify-center
+
+[33mcommit d8e9c28c650f87c3d0a299c72696d88626ccacca[m
+Author: HazeHacker <3542495583@qq.com>
+Date:   Fri May 29 23:52:58 2026 +0800
+
+    feat(detail): align project detail page with new design system
+    
+    Co-Authored-By: Claude Opus 4.7 (1M context) <noreply@anthropic.com>
+
+[33mcommit 1361d18876969470674c6ea15fc7222acbeb6cd4[m
+Author: HazeHacker <3542495583@qq.com>
+Date:   Fri May 29 23:36:26 2026 +0800
+
+    feat(home): integrate redesigned components with scroll reveal
+
+[33mcommit 60aaeb6f476c8d2ea0e50453782a8795f626f560[m
+Author: HazeHacker <3542495583@qq.com>
+Date:   Fri May 29 23:28:46 2026 +0800
+
+    feat(footer): rewrite — Crafted with care + back-to-top link
+
+[33mcommit 3ce2ada670f56410e2e107d91b1143f76582a715[m
+Author: HazeHacker <3542495583@qq.com>
+Date:   Fri May 29 23:22:01 2026 +0800
+
+    feat(about): rewrite — 36px Playfair intro, ContactCard, blue emphasis
+
+[33mcommit f554bc0c8ca9225aa5d928b2fb8ebc5f45b1af9e[m
+Author: HazeHacker <3542495583@qq.com>
+Date:   Fri May 29 23:18:33 2026 +0800
+
+    feat(components): add ContactCard
+
+[33mcommit 6e834c394da585a97dc9c422cb31576b32a3990f[m
+Author: HazeHacker <3542495583@qq.com>
+Date:   Fri May 29 23:14:23 2026 +0800
+
+    feat(timeline): rewrite — blue current dot with glow, Playfair titles
+
+[33mcommit b80c51dcb7c0387a41f4b665ecaf8e3f31f6502d[m
+Author: HazeHacker <3542495583@qq.com>
+Date:   Fri May 29 23:09:52 2026 +0800
+
+    feat(projects): rewrite — large serif numbers, hover translateX, blue glow
+
+[33mcommit b5f7c54c60908ab0d49d2c62369183b25f8e485f[m
+Author: HazeHacker <3542495583@qq.com>
+Date:   Fri May 29 23:05:36 2026 +0800
+
+    feat(skills): rewrite — Playfair 48px headers, italic blue AI, blue hover pills
+
+[33mcommit 3ed5ce0d5843b19e165b6c64cf23ad77f4405445[m
+Author: HazeHacker <3542495583@qq.com>
+Date:   Fri May 29 23:01:10 2026 +0800
+
+    feat(hero): rewrite — 104px Playfair, gradient emphasis, status pill
+
+[33mcommit 55cbe6b1506371b292efd62f2b5e79746839dff7[m
+Author: HazeHacker <3542495583@qq.com>
+Date:   Fri May 29 22:58:08 2026 +0800
+
+    feat(nav): rewrite — Playfair logo, Blog link, blue hover
+
+[33mcommit b6921b48209358d5127dc12cb07737919f715d6d[m
+Author: HazeHacker <3542495583@qq.com>
+Date:   Fri May 29 22:54:58 2026 +0800
+
+    feat(components): add RevealOnScroll wrapper (IntersectionObserver)
+
+[33mcommit d6210769874a763750d2bf8870e8a0d27fa2b05a[m
+Author: HazeHacker <3542495583@qq.com>
+Date:   Fri May 29 22:49:30 2026 +0800
+
+    feat(layout): add floating orbs and z-index page wrapper
+
+[33mcommit 690ffd70ae3800866040df17d2476ce9bdd75f63[m
+Author: HazeHacker <3542495583@qq.com>
+Date:   Fri May 29 22:44:33 2026 +0800
+
+    content: reorder projects — Blog → InterviewSim → AIHub → GapaSea
+
+[33mcommit b4849bbad049aabc4192e0f1bc72ac3c5767aa66[m
+Author: HazeHacker <3542495583@qq.com>
+Date:   Fri May 29 22:35:21 2026 +0800
+
+    feat(styles): add floating orbs, scroll reveal, reduced motion, responsive
+
+[33mcommit 9bbfa7ffb6dfd68f207574dfa122196928e21e3d[m
+Author: HazeHacker <3542495583@qq.com>
+Date:   Fri May 29 22:15:31 2026 +0800
+
+    feat(styles): replace design tokens — blue/violet/Playfair/Geist
+
+[33mcommit 937336170598f5f8b714677cb5eea346380b1926[m
+Author: HazeHacker <3542495583@qq.com>
+Date:   Fri May 29 22:07:57 2026 +0800
+
+    chore: swap @fontsource/inter for playfair-display + geist
+
+[33mcommit 023627993cf6b6e4ad478001ef1078f1066791b1[m
+Author: HazeHacker <3542495583@qq.com>
+Date:   Fri May 29 21:32:07 2026 +0800
+
+    docs: portfolio redesign implementation plan (17 tasks)
+
+[33mcommit c4d1fbb0ab172fce8b25ca4d65284f6da33a4d01[m
+Author: HazeHacker <3542495583@qq.com>
+Date:   Fri May 29 20:38:21 2026 +0800
+
+    docs: portfolio redesign spec (light + sky blue + atmospheric)
+
+[33mcommit 0dadd4cd2f1947fcc2f724711f5b71f8c8c6a2a5[m
+Author: HazeHacker <3542495583@qq.com>
+Date:   Fri May 29 16:33:23 2026 +0800
+
+    feat: add GapaSea Marketing Platform portfolio project
+    
+    Add internship project entry covering the KOC sample marketing platform
+    built for a smart sports glasses startup, including AI review pipeline,
+    multi-service architecture, BFF layer, and log server.
+    
+    Co-Authored-By: Claude Opus 4.7 <noreply@anthropic.com>
+
+[33mcommit 244bd3514fbe98bdb11c937c5fada31ece5a1c4d[m
+Author: HazeHacker <3542495583@qq.com>
+Date:   Fri May 29 14:47:24 2026 +0800
+
+    docs: add project README with setup, structure, and content guide
+    
+    Co-Authored-By: Claude Opus 4.7 <noreply@anthropic.com>
+
+[33mcommit 4e2d042235e360cf9321e604689141679149dd94[m
+Author: HazeHacker <3542495583@qq.com>
+Date:   Fri May 29 14:43:35 2026 +0800
+
+    fix: import global CSS, add favicon/OG meta, mobile nav, and 404 page
+    
+    Critical fix: global.css was never imported so no CSS was generated in
+    production builds. Also adds Open Graph / Twitter Card meta, favicon
+    links, skip-to-content link, mobile hamburger menu, lazy image loading,
+    dynamic footer year, 404 page, and cross-page nav link correction.
+    Removes duplicate legacy content config.
+    
+    Co-Authored-By: Claude Opus 4.7 <noreply@anthropic.com>
+
+[33mcommit a8c311d3583444b0054e23cfcdf6e32e91ec1935[m
+Author: HazeHacker <3542495583@qq.com>
+Date:   Thu May 28 21:37:59 2026 +0800
+
+    feat: responsive verification and GitHub Pages deploy workflow
+
+[33mcommit 43d12a42cfb3f59d223987b66bdb037e53f1cf8c[m
+Author: HazeHacker <3542495583@qq.com>
+Date:   Thu May 28 21:30:10 2026 +0800
+
+    feat: add project detail page
+
+[33mcommit fc1851bf714faae270e2adb25dbe7ab10213661c[m
+Author: HazeHacker <3542495583@qq.com>
+Date:   Thu May 28 20:59:10 2026 +0800
+
+    feat: assemble homepage with all sections
+
+[33mcommit af81652dfc19e33890fcc1108c1359a9af0ee5c9[m
+Author: HazeHacker <3542495583@qq.com>
+Date:   Thu May 28 20:56:52 2026 +0800
+
+    feat: add About and Footer components
+
+[33mcommit 8fcd3215cbd34277352a95d50e19c7fcc53660c0[m
+Author: HazeHacker <3542495583@qq.com>
+Date:   Thu May 28 20:55:56 2026 +0800
+
+    feat: add Timeline component
+
+[33mcommit 6670944bd9b93fa61ef4fc221b0d8da5ad1e7198[m
+Author: HazeHacker <3542495583@qq.com>
+Date:   Thu May 28 20:51:46 2026 +0800
+
+    feat: add ProjectList component
+
+[33mcommit 6779f4b01ec38225e52629d7f0455078ce9dec43[m
+Author: HazeHacker <3542495583@qq.com>
+Date:   Thu May 28 20:37:08 2026 +0800
+
+    feat: add Skills component
+
+[33mcommit afe42304c3f73abe146ff27d19aadde399a2806d[m
+Author: HazeHacker <3542495583@qq.com>
+Date:   Thu May 28 20:34:59 2026 +0800
+
+    feat: add Hero component
+
+[33mcommit cf9e97502c7e447e10625f4225ece153f8e38c78[m
+Author: HazeHacker <3542495583@qq.com>
+Date:   Thu May 28 20:32:56 2026 +0800
+
+    feat: add Nav component
+
+[33mcommit e43db36d5befa4e41870d4ffc445d8171d6edbab[m
+Author: HazeHacker <3542495583@qq.com>
+Date:   Thu May 28 20:30:01 2026 +0800
+
+    feat: add base layout
+
+[33mcommit adcbd1eee128ba4c75ad94948bf468746eee72c8[m
+Author: HazeHacker <3542495583@qq.com>
+Date:   Thu May 28 20:17:34 2026 +0800
+
+    feat: add content collection schema and project markdown files
+
+[33mcommit f46f3a064a6c51120f610de0d30800543c77bcb4[m
+Author: HazeHacker <3542495583@qq.com>
+Date:   Thu May 28 20:12:03 2026 +0800
+
+    feat: add data files for skills, timeline, and about
+
+[33mcommit 1aa4151a9e495c6251a2b66f70767ffa3edf9247[m
+Author: HazeHacker <3542495583@qq.com>
+Date:   Thu May 28 20:05:10 2026 +0800
+
+    chore: configure Astro static output and Tailwind base styles
+
+[33mcommit d951e922d2e86b5ace84db1219348e8bf1c7e0aa[m
+Author: HazeHacker <3542495583@qq.com>
+Date:   Thu May 28 19:32:57 2026 +0800
+
+    chore: scaffold Astro project with Tailwind
+
+[33mcommit d7f472d1230aa6d74c269f9d6580a4dd4cea9c50[m
+Author: HazeHacker <3542495583@qq.com>
+Date:   Thu May 28 15:31:03 2026 +0800
+
+    Add portfolio implementation plan
+    
+    16 tasks: scaffold, config, data files, content collections, 8 components,
+    homepage assembly, detail page, responsive polish, deployment.
+
+[33mcommit 0c395f544f4d76784e36ecf52b4ae4960da25d73[m
+Author: HazeHacker <3542495583@qq.com>
+Date:   Thu May 28 15:13:34 2026 +0800
+
+    Add portfolio website design spec
+    
+    Minimal/editorial style, Astro + Tailwind, Markdown-driven projects,
+    JSON data files for timeline/skills/about.
+
+[33mcommit ef68958184f229b9cb51599268d6d8c56238d7f2[m
+Author: Hazenix <3542495583@qq.com>
+Date:   Thu May 28 09:49:14 2026 +0800
+
+    Initial commit
