@@ -1,9 +1,16 @@
 [
   {
-    "period": "2026.04 — Present",
+    "period": "2026.06 — Present",
+    "title": "后端开发",
+    "company": "北京字节跳动科技有限公司",
+    "description": "accumulating……",
+    "current": true
+  },
+  {
+    "period": "2026.04 — 2026.06",
     "title": "全栈开发",
-    "company": "深圳浪迹光年有限公司",
-    "description": "设计并交付营销中台核心模块：小红书内容分析平台(关键词-帖子-评论-AI意图分类 全链路)、KOL自动入库流水线(设计多路并发)",
+    "company": "深圳市浪迹光年科技有限公司",
+    "description": "完成小红书关键词分析系统前后端全链路开发：实现关键词→帖子→关联话题提取→评论→AI意图分类→全链路，支持达人自动入库，运营团队 KOL/KOC 筛选入库效率提升90%+",
     "current": true
   }
 ]
